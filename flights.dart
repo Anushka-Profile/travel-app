@@ -3,41 +3,40 @@ import 'package:flutter1/model/activity_model.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-
 class DestinationScreen extends StatefulWidget {
   @override
   _DestinationScreenState createState() => _DestinationScreenState();
 }
 
-
 class _DestinationScreenState extends State<DestinationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(children: <Widget>[
-        Stack(
-          children: <Widget>[
-          Container(
-            height:MediaQuery.of(context).size.width ,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  offset: Offset(0.0,2.0),
-                  blurRadius: 6.0,
+      body: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      offset: Offset(0.0, 2.0),
+                      blurRadius: 6.0,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30.0),
-            child: Image.network(
-              "https://images.unsplash.com/photo-1547032441-902c1f45018c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-              fit: BoxFit.cover,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: Image.network(
+                    "https://images.unsplash.com/photo-1547032441-902c1f45018c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
-            ),
-            Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,17 +49,18 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                     Spacer(),
                     Text(
-                      "Flights", 
+                      "Flights",
                       style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 35),),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 35),
+                    ),
                   ],
                 ),
-            ),
-        ],
-        ),
-        Expanded(
+              ),
+            ],
+          ),
+          Expanded(
             child: ListView.builder(
               padding: EdgeInsets.only(top: 10.0, bottom: 15.0),
               itemCount: activities.length,
@@ -89,7 +89,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 Container(
                                   width: 120.0,
                                   child: Text(
-                                    activity.name,
+                                    '${activity.dept_name} -> ${activity.dest_name}',
                                     style: TextStyle(
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.w600,
@@ -128,29 +128,29 @@ class _DestinationScreenState extends State<DestinationScreen> {
                               children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
+                                  width: 140.0,
                                   decoration: BoxDecoration(
                                     color: Theme.of(context).accentColor,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   alignment: Alignment.center,
                                   child: Text(
-                                    activity.startTimes[0],
+                                    '${activity.startTimes[0]} : ${activity.startTimes[1]}',
                                   ),
                                 ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    activity.startTimes[1],
-                                  ),
-                                ),
+                                // SizedBox(width: 10.0),
+                                // Container(
+                                //   padding: EdgeInsets.all(5.0),
+                                //   width: 70.0,
+                                //   decoration: BoxDecoration(
+                                //     color: Theme.of(context).accentColor,
+                                //     borderRadius: BorderRadius.circular(10.0),
+                                //   ),
+                                //   alignment: Alignment.center,
+                                //   child: Text(
+                                //     activity.startTimes[1],
+                                //   ),
+                                // ),
                               ],
                             )
                           ],
@@ -163,10 +163,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: CachedNetworkImage( 
-                            imageUrl: activity.imageURL,
-                            width: 110.0,
-                            fit: BoxFit.cover,
+                        child: CachedNetworkImage(
+                          imageUrl: activity.imageURL,
+                          width: 110.0,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -175,10 +175,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
               },
             ),
           ),
-
-      ],
+        ],
       ),
     );
   }
 }
-
