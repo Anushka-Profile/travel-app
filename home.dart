@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  int _currentTab = 0;
+  // int _currentTab = 0;
   List<IconData> _icons = [
     FontAwesomeIcons.home,
     FontAwesomeIcons.plane,
@@ -161,37 +161,37 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentTab,
-        onTap: (int value) {
-          setState(() {
-            _currentTab = value;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              size: 30.0,
-            ),
-            title: SizedBox.shrink(),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.circle,
-              size: 30.0,
-            ),
-            title: SizedBox.shrink(),
-          ),
-          BottomNavigationBarItem(
-            icon: CircleAvatar(
-              radius: 15.0,
-              backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
-            ),
-            title: SizedBox.shrink(),
-          )
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _currentTab,
+      //   onTap: (int value) {
+      //     setState(() {
+      //       _currentTab = value;
+      //     });
+      //   },
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.search,
+      //         size: 30.0,
+      //       ),
+      //       title: SizedBox.shrink(),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.circle,
+      //         size: 30.0,
+      //       ),
+      //       title: SizedBox.shrink(),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: CircleAvatar(
+      //         radius: 15.0,
+      //         backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
+      //       ),
+      //       title: SizedBox.shrink(),
+      //     )
+      //   ],
+      // ),
     );
   }
 }
@@ -324,7 +324,7 @@ class CountryListTile extends StatelessWidget {
                         children: [
                           Container(
                             child: Text(
-                              "Paris",
+                              countryName,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
@@ -334,13 +334,15 @@ class CountryListTile extends StatelessWidget {
                           SizedBox(
                             height: 3,
                           ),
-                          Text(
-                            "18 Tours",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 13),
-                          )
+                          Container(
+                            child: Text(
+                              '$noOfTours Tours',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -355,7 +357,7 @@ class CountryListTile extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              "4.5",
+                              "$rating",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
