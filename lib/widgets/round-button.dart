@@ -14,7 +14,7 @@ class RoundButton extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.blue.withOpacity(0.8),
-          borderRadius: BorderRadius.circular(20.0)),
+          borderRadius: BorderRadius.circular(200.0)),
       child: FlatButton(
           onPressed: () {},
           child: Padding(

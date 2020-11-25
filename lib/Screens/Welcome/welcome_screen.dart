@@ -1,4 +1,5 @@
 import 'package:first_app/Screens/Login/login_screen.dart';
+import 'package:first_app/Screens/Signup/signup.dart';
 import 'package:first_app/Screens/Welcome/components/background.dart';
 import 'package:first_app/Screens/Welcome/components/palette.dart';
 import 'package:flutter/material.dart';
@@ -22,17 +23,26 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 190,
+                  height: 160,
                 ),
                 RoundedButton(
                   text: "SIGN UP",
-                  textColor: kPrimaryColor,
-                  press: () {},
+                  textColor: Colors.white60,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SignUpScreen();
+                        },
+                      ),
+                    );
+                  },
                 ),
                 RoundedButton(
                   text: "LOGIN",
-                  color: kPrimaryColor.withOpacity(0.3),
-                  textColor: Color(0xFF0D47A1),
+                  color: kPrimaryColor.withOpacity(0.6),
+                  textColor: Colors.white60,
                   press: () {
                     Navigator.push(
                       context,

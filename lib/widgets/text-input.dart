@@ -7,11 +7,13 @@ class TextInput extends StatelessWidget {
     @required this.icon,
     @required this.hint,
     this.inputType,
+    this.onChanged,
     this.inputAction,
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
+  final ValueChanged<String> onChanged;
   final TextInputType inputType;
   final TextInputAction inputAction;
 
@@ -22,9 +24,10 @@ class TextInput extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[600].withOpacity(0.5),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(200.0),
         ),
         child: TextField(
+          onChanged: onChanged,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
             border: InputBorder.none,

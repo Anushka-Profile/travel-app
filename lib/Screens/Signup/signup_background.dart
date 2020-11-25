@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Background extends StatelessWidget {
-  const Background({
+class SignupBackground extends StatelessWidget {
+  const SignupBackground({
     Key key,
   }) : super(key: key);
   @override
@@ -17,7 +17,7 @@ class Background extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
           image: NetworkImage(
-              'https://images.unsplash.com/photo-1553697388-94e804e2f0f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80'),
+              'https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
               Colors.black87.withOpacity(0.6), BlendMode.darken),

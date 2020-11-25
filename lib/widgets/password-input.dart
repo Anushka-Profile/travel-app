@@ -6,11 +6,13 @@ class PasswordInput extends StatelessWidget {
     Key key,
     @required this.icon,
     @required this.hint,
+    this.onChanged,
     this.inputAction,
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
+  final ValueChanged<String> onChanged;
   final TextInputAction inputAction;
 
   @override
@@ -20,7 +22,7 @@ class PasswordInput extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[600].withOpacity(0.5),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(200.0),
         ),
         child: TextField(
           decoration: InputDecoration(
@@ -35,6 +37,7 @@ class PasswordInput extends StatelessWidget {
                 size: 30,
               ),
             ),
+            suffixIcon: Icon(Icons.visibility, color: Colors.white60),
             hintStyle: kInputText,
           ),
           obscureText: true,

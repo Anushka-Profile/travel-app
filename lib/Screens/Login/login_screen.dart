@@ -1,9 +1,11 @@
 import 'package:first_app/Screens/Login/login_background.dart';
+import 'package:first_app/Screens/Signup/signup.dart';
+import 'package:first_app/views/home.dart';
+import 'package:first_app/widgets/already-have-an-account-check.dart';
 import 'package:first_app/widgets/password-input.dart';
-import 'package:first_app/widgets/round-button.dart';
+import 'package:first_app/widgets/rounded_button.dart';
 import 'package:first_app/widgets/text-input.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -16,19 +18,19 @@ class LoginScreen extends StatelessWidget {
           child: SafeArea(
             child: Column(children: [
               Container(
-                height: 150,
+                height: 220,
                 child: Center(
                   child: Text(
                     'Season Hill',
                     style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 55,
                         color: Colors.white.withOpacity(0.8),
-                        fontWeight: FontWeight.w700),
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
               SizedBox(
-                height: 100,
+                height: 30,
               ),
               Container(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -38,43 +40,53 @@ class LoginScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           TextInput(
-                            icon: FontAwesomeIcons.solidEnvelope,
+                            icon: Icons.person,
                             hint: 'Email',
                             inputType: TextInputType.emailAddress,
+                            onChanged: (value) {},
                             inputAction: TextInputAction.next,
                           ),
                           PasswordInput(
-                            icon: FontAwesomeIcons.lock,
+                            icon: Icons.lock,
                             hint: 'Password',
+                            onChanged: (value) {},
                             inputAction: TextInputAction.done,
                           ),
-                          Text('Forgot Password?',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w100,
-                                  color: Colors.white)),
                         ],
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 30,
                           ),
-                          RoundButton(buttonText: 'Login'),
+                          RoundedButton(
+                              text: 'Login',
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Home();
+                                    },
+                                  ),
+                                );
+                              }),
                           SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
-                          Container(
-                              decoration: BoxDecoration(
-                                  border: Border(bottom: BorderSide.none)),
-                              child: Text(
-                                "Don't Have an Account?\n Click here to Register",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.white60,
-                                    fontWeight: FontWeight.w100),
-                              )),
+                          AlreadyHaveAnAccountCheck(
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SignUpScreen();
+                                  },
+                                ),
+                              );
+                            },
+                          ),
                           SizedBox(height: 50)
                         ],
                       ),
