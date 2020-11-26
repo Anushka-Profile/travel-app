@@ -63,6 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 });
                               },
                             ),
+                            SizedBox(height: 20),
                             TextFormField(
                               obscureText: true,
                               decoration: kInputPassDecoration,

@@ -27,7 +27,7 @@ class _ConfirmHotelState extends State<ConfirmHotel> {
   void initState() {
     super.initState();
     pickedDate = DateTime.now();
-    pickedDate1 = DateTime(DateTime.now().day + 1);
+    pickedDate1 = DateTime.now();
   }
 
   Widget _buildDept() {
@@ -102,52 +102,59 @@ class _ConfirmHotelState extends State<ConfirmHotel> {
           "Hotel Booking",
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: CachedNetworkImage(
-                    imageUrl: widget.destiny.imageURL,
-                    width: 200.0,
-                    fit: BoxFit.cover,
-                  ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(children: [
+            Container(
+              margin: EdgeInsets.all(24),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: CachedNetworkImage(
+                          imageUrl: widget.destiny.imageURL,
+                          width: 200.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    _buildDept(),
+                    _buildDest(),
+                    _buildDate(),
+                    _buildDate1(),
+                    SizedBox(height: 100),
+                    RaisedButton(
+                      child: Text(
+                        'Book',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      onPressed: () async {
+                        // print('${_departure}');
+                        // newData
+                        await newData(
+                            _departure, _destination, pickedDate, pickedDate1);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Confirmation()),
+                        );
+                      },
+                      color: Colors.green,
+                      textColor: Colors.black,
+                    ),
+                  ],
                 ),
               ),
-              _buildDept(),
-              _buildDest(),
-              _buildDate(),
-              _buildDate1(),
-              SizedBox(height: 100),
-              RaisedButton(
-                child: Text(
-                  'Book',
-                  style: TextStyle(fontSize: 25),
-                ),
-                onPressed: () async {
-                  // print('${_departure}');
-                  // newData
-                  await newData(
-                      _departure, _destination, pickedDate, pickedDate1);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Confirmation()),
-                  );
-                },
-                color: Colors.green,
-                textColor: Colors.black,
-              ),
-            ],
-          ),
+            ),
+          ]),
         ),
       ),
     );
@@ -187,7 +194,7 @@ class _ConfirmHotelState extends State<ConfirmHotel> {
 
   Future<void> newData(String _departure, String _destination,
       DateTime pickedDate, DateTime pickedDate1) async {
-    return await DB().flight.add({
+    return await DB().hotel.add({
       'departure': _departure,
       'destination': _destination,
       'from_date': pickedDate,

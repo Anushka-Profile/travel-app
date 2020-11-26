@@ -79,7 +79,7 @@ List<Destiny> destinies = [
   ),
   Destiny(
     imageURL:
-        'https://www.google.com/imgres?imgurl=https%3A%2F%2Fpix10.agoda.net%2FhotelImages%2F983%2F983002%2F983002_16091414380046443534.jpg%3Fs%3D1024x768&imgrefurl=https%3A%2F%2Fwww.agoda.com%2Fen-in%2Fpearl-palace-heritage-the-boutique-guest-house%2Fhotel%2Fjaipur-in.html&tbnid=MS0reUSkGw5E_M&vet=12ahUKEwjm8J7G_aDtAhWPY30KHaX5DR4QMygLegUIARCmAQ..i&docid=gYyn8aVbtj80GM&w=1024&h=681&q=hotel%20pearl%20palace%20jaipur&ved=2ahUKEwjm8J7G_aDtAhWPY30KHaX5DR4QMygLegUIARCmAQ',
+        'https://images.unsplash.com/photo-1573363059771-8b2b53b492ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80',
     name: 'Hotel Pearl Palace\nJaipur,India',
     date: 'Best Time to Visit: mid-February',
     price: '2900',
@@ -93,7 +93,7 @@ List<Destiny> destinies = [
   ),
   Destiny(
     imageURL:
-        'https://www.google.com/imgres?imgurl=https%3A%2F%2Fcf.bstatic.com%2Fimages%2Fhotel%2Fmax1024x768%2F147%2F147421255.jpg&imgrefurl=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fin%2Fwelcome-heritage-denzong-regency.html&tbnid=Ulo5ryCNMFB6KM&vet=12ahUKEwitss_IgaHtAhUn0nMBHTFPCyYQMygCegUIARCVAQ..i&docid=7QDtPfPMONLKIM&w=1024&h=683&q=welcomheritage%20denzong%20regency&ved=2ahUKEwitss_IgaHtAhUn0nMBHTFPCyYQMygCegUIARCVAQ',
+        'https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
     name: 'WelcomHeritage Denzong Regency\nSikkim',
     date: 'Best Time to Visit: October',
     price: '3400',

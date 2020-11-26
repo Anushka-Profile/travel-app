@@ -70,7 +70,9 @@ class _HotelScreenState extends State<HotelScreen> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => ConfirmHotel(),
+                      builder: (_) => ConfirmHotel(
+                        destiny: destiny,
+                      ),
                     ),
                   ),
                   child: Stack(

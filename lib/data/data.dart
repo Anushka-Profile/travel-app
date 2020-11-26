@@ -76,7 +76,7 @@ List<PopularTourModel> getPopularTours() {
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1491884662610-dfcd28f30cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80";
   popularTourModel.title = "Tokyo";
-  popularTourModel.desc = "10 nights for two/all inclusive";
+  popularTourModel.desc = "4 nights for two";
   popularTourModel.price = "Rs 17000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
@@ -85,7 +85,7 @@ List<PopularTourModel> getPopularTours() {
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1540483761890-a1f7be05d99f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
   popularTourModel.title = "South Korea";
-  popularTourModel.desc = "10 nights for two/all inclusive";
+  popularTourModel.desc = "7 nights /all inclusive";
   popularTourModel.price = "Rs 20000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
@@ -111,7 +111,7 @@ List<PopularTourModel> getPopularTours() {
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8c2lra2ltJTIwdG91cmlzbXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60";
   popularTourModel.title = "Sikkim";
-  popularTourModel.desc = "5 nights for two/all inclusive";
+  popularTourModel.desc = "5 nights for 2/all inclusive";
   popularTourModel.price = "Rs 15000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
@@ -120,7 +120,7 @@ List<PopularTourModel> getPopularTours() {
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1554843733-0f703ac3f79f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bm9yd2F5JTIwdG91cmlzbXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60";
   popularTourModel.title = "Norway";
-  popularTourModel.desc = "4 nights for three/all inclusive";
+  popularTourModel.desc = "4 nights for 3/all inclusive";
   popularTourModel.price = "Rs 12000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
@@ -128,7 +128,7 @@ List<PopularTourModel> getPopularTours() {
   //1
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1491884662610-dfcd28f30cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80";
-  popularTourModel.title = "";
+  popularTourModel.title = "Japan";
   popularTourModel.desc = "4 nights for four/all inclusive";
   popularTourModel.price = "Rs 17000";
   popularTourModels.add(popularTourModel);
