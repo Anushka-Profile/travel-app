@@ -109,7 +109,7 @@ class _HotelScreenState extends State<HotelScreen> {
                                   Column(
                                     children: <Widget>[
                                       Text(
-                                        '\$${destiny.price}',
+                                        destiny.price,
                                         style: TextStyle(
                                           fontSize: 22.0,
                                           fontWeight: FontWeight.w600,

@@ -75,7 +75,7 @@ List<PopularTourModel> getPopularTours() {
   //1
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1491884662610-dfcd28f30cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80";
-  popularTourModel.title = "Japan";
+  popularTourModel.title = "Tokyo";
   popularTourModel.desc = "10 nights for two/all inclusive";
   popularTourModel.price = "Rs 17000";
   popularTourModels.add(popularTourModel);
@@ -109,18 +109,18 @@ List<PopularTourModel> getPopularTours() {
 
   //2
   popularTourModel.imgURL =
-      "https://images.unsplash.com/photo-1540483761890-a1f7be05d99f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
-  popularTourModel.title = "South Korea";
+      "https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8c2lra2ltJTIwdG91cmlzbXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60";
+  popularTourModel.title = "Sikkim";
   popularTourModel.desc = "5 nights for two/all inclusive";
-  popularTourModel.price = "Rs 20000";
+  popularTourModel.price = "Rs 15000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
 
   //3
   popularTourModel.imgURL =
-      "https://images.unsplash.com/photo-1545126178-862cdb469409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
-  popularTourModel.title = "Rajasthan";
-  popularTourModel.desc = "10 nights for three/all inclusive";
+      "https://images.unsplash.com/photo-1554843733-0f703ac3f79f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bm9yd2F5JTIwdG91cmlzbXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60";
+  popularTourModel.title = "Norway";
+  popularTourModel.desc = "4 nights for three/all inclusive";
   popularTourModel.price = "Rs 12000";
   popularTourModels.add(popularTourModel);
   popularTourModel = new PopularTourModel();
@@ -128,7 +128,7 @@ List<PopularTourModel> getPopularTours() {
   //1
   popularTourModel.imgURL =
       "https://images.unsplash.com/photo-1491884662610-dfcd28f30cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80";
-  popularTourModel.title = "Japan";
+  popularTourModel.title = "";
   popularTourModel.desc = "4 nights for four/all inclusive";
   popularTourModel.price = "Rs 17000";
   popularTourModels.add(popularTourModel);
