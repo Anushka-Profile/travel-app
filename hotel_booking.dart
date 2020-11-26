@@ -8,13 +8,6 @@ class ConfirmHotel extends StatefulWidget {
 }
 
 class _ConfirmHotelState extends State<ConfirmHotel> {
-  DateTime pickedDate;
-
-  @override
-  void initState() {
-    super.initState();
-    pickedDate = DateTime.now();
-  }
   
   @override
   Widget build(BuildContext context) {
@@ -151,20 +144,20 @@ class _ConfirmHotelState extends State<ConfirmHotel> {
     );
   }
 
-  _pickDate() async {
-    DateTime date = await showDatePicker(
-      context: context,
-      initialDate: pickedDate,
-      // firstDate: DateTime(DateTime.now().year - 5),
-      firstDate: pickedDate,
-      lastDate:DateTime(DateTime.now().year + 5) ,
-    );
+  // _pickDate() async {
+  //   DateTime date = await showDatePicker(
+  //     context: context,
+  //     initialDate: pickedDate,
+  //     // firstDate: DateTime(DateTime.now().year - 5),
+  //     firstDate: pickedDate,
+  //     lastDate:DateTime(DateTime.now().year + 5) ,
+  //   );
 
-    if (date != null) {
-      setState(() {
-        pickedDate = date;
-      });
-    }
-  }
+  //   if (date != null) {
+  //     setState(() {
+  //       pickedDate = date;
+  //     });
+  //   }
+  // }
 
 }
