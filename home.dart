@@ -5,6 +5,7 @@ import 'package:flutter1/model/country_model.dart';
 import 'package:flutter1/views/flights.dart';
 import 'package:flutter1/model/popular_tours_model.dart';
 import 'package:flutter1/views/hotels.dart';
+import 'package:flutter1/views/profile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -14,7 +15,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  // int _currentTab = 0;
+  int _currentTab = 0;
   List<IconData> _icons = [
     FontAwesomeIcons.home,
     FontAwesomeIcons.plane,
@@ -161,37 +162,45 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _currentTab,
-      //   onTap: (int value) {
-      //     setState(() {
-      //       _currentTab = value;
-      //     });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.search,
-      //         size: 30.0,
-      //       ),
-      //       title: SizedBox.shrink(),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.circle,
-      //         size: 30.0,
-      //       ),
-      //       title: SizedBox.shrink(),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: CircleAvatar(
-      //         radius: 15.0,
-      //         backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
-      //       ),
-      //       title: SizedBox.shrink(),
-      //     )
-      //   ],
-      // ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        onTap: (int value) {
+          setState(() {
+            _currentTab = value;
+          });
+          if (_currentTab == 2) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfileScreen()
+          ),
+          );
+        }
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              size: 30.0,
+            ),
+            title: SizedBox.shrink(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.circle,
+              size: 30.0,
+            ),
+            title: SizedBox.shrink(),
+          ),
+          BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 15.0,
+              backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
+            ),
+            title: SizedBox.shrink(),
+          )
+        ],
+      ),
     );
   }
 }
