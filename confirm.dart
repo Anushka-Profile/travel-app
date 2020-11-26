@@ -12,22 +12,22 @@ class _ConfirmationState extends State<Confirmation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          FlatButton.icon(
-            icon: Icon(
-              Icons.navigate_before,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              print('Back press');
-            },
-            label: Text('GO Back'),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      //   actions: [
+      //     FlatButton.icon(
+      //       icon: Icon(
+      //         Icons.navigate_before,
+      //         color: Colors.black,
+      //       ),
+      //       onPressed: () {
+      //         print('Back press');
+      //       },
+      //       label: Text('GO Back'),
+      //     ),
+      //   ],
+      // ),
       body: Container(
         height: double.maxFinite,
         width: double.maxFinite,
