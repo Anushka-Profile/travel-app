@@ -1,7 +1,7 @@
 import 'package:flutter1/model/activity_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter1/views/confirm.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FlightScreen extends StatefulWidget {
   final Activity activity;
@@ -13,6 +13,7 @@ class FlightScreen extends StatefulWidget {
 }
 
 class _FlightScreenState extends State<FlightScreen> {
+  final CollectionReference flight = Firestore.instance.collection('flights');
   DateTime pickedDate;
   final TextEditingController _textController = new TextEditingController();
   final TextEditingController _myController = new TextEditingController();
@@ -22,7 +23,6 @@ class _FlightScreenState extends State<FlightScreen> {
   String _destination;
   String _deptTime;
   String _arrivalTime;
-
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -129,7 +129,6 @@ class _FlightScreenState extends State<FlightScreen> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -152,7 +151,10 @@ class _FlightScreenState extends State<FlightScreen> {
               _buildDate(),
               SizedBox(height: 100),
               RaisedButton(
-                child: Text('Book',style: TextStyle(fontSize: 25),),
+                child: Text(
+                  'Book',
+                  style: TextStyle(fontSize: 25),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -175,7 +177,7 @@ class _FlightScreenState extends State<FlightScreen> {
       initialDate: pickedDate,
       // firstDate: DateTime(DateTime.now().year - 5),
       firstDate: pickedDate,
-      lastDate:DateTime(DateTime.now().year + 5) ,
+      lastDate: DateTime(DateTime.now().year + 5),
     );
 
     if (date != null) {
@@ -184,5 +186,14 @@ class _FlightScreenState extends State<FlightScreen> {
       });
     }
   }
-  
+
+  Future<void> newData(String title, String content) async {
+    return await DatabaseService().flight.add({
+      'departure':_departure,
+      'destination': _destination,
+      'departure_time':_deptTime,
+      'arrival_time':_arrivalTime,
+      'date':pickedDate,
+    });
+  }
 }
