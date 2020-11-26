@@ -1,6 +1,7 @@
 import 'package:first_app/model/flights_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app/views/hotel_booking.dart';
 
 class HotelScreen extends StatefulWidget {
   @override
@@ -65,111 +66,120 @@ class _HotelScreenState extends State<HotelScreen> {
               itemCount: destinies.length,
               itemBuilder: (BuildContext context, int index) {
                 Destiny destiny = destinies[index];
-                return Stack(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
-                      height: 170.0,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  width: 120.0,
-                                  child: Text(
-                                    destiny.name,
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 2,
-                                  ),
-                                ),
-                                Column(
-                                  children: <Widget>[
-                                    Text(
-                                      '\$${destiny.price}',
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ConfirmHotel(),
+                    ),
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
+                        height: 170.0,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Container(
+                                    width: 120.0,
+                                    child: Text(
+                                      destiny.name,
                                       style: TextStyle(
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.w600,
                                       ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
                                     ),
-                                    Text(
-                                      'per pax',
-                                      style: TextStyle(
-                                        color: Colors.grey,
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      Text(
+                                        '\$${destiny.price}',
+                                        style: TextStyle(
+                                          fontSize: 22.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Text(
-                              destiny.date,
-                              style: TextStyle(
-                                color: Colors.grey,
+                                      Text(
+                                        'per pax',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
-                            ),
-                            SizedBox(height: 10.0),
-                            // Row(
-                            //   children: <Widget>[
-                            //     Container(
-                            //       padding: EdgeInsets.all(5.0),
-                            //       width: 70.0,
-                            //       decoration: BoxDecoration(
-                            //         color: Theme.of(context).accentColor,
-                            //         borderRadius: BorderRadius.circular(10.0),
-                            //       ),
-                            //       alignment: Alignment.center,
-                            //       // child: Text(
-                            //       //   activity.startTimes[0],
-                            //       // ),
-                            //     ),
-                            //     SizedBox(width: 10.0),
-                            //     Container(
-                            //       padding: EdgeInsets.all(5.0),
-                            //       width: 70.0,
-                            //       decoration: BoxDecoration(
-                            //         color: Theme.of(context).accentColor,
-                            //         borderRadius: BorderRadius.circular(10.0),
-                            //       ),
-                            //       alignment: Alignment.center,
-                            //       // child: Text(
-                            //       //   activity.startTimes[1],
-                            //       // ),
-                            //     ),
-                            //   ],
-                            // )
-                          ],
+                              Text(
+                                destiny.date,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              SizedBox(height: 10.0),
+                              // Row(
+                              //   children: <Widget>[
+                              //     Container(
+                              //       padding: EdgeInsets.all(5.0),
+                              //       width: 70.0,
+                              //       decoration: BoxDecoration(
+                              //         color: Theme.of(context).accentColor,
+                              //         borderRadius: BorderRadius.circular(10.0),
+                              //       ),
+                              //       alignment: Alignment.center,
+                              //       // child: Text(
+                              //       //   activity.startTimes[0],
+                              //       // ),
+                              //     ),
+                              //     SizedBox(width: 10.0),
+                              //     Container(
+                              //       padding: EdgeInsets.all(5.0),
+                              //       width: 70.0,
+                              //       decoration: BoxDecoration(
+                              //         color: Theme.of(context).accentColor,
+                              //         borderRadius: BorderRadius.circular(10.0),
+                              //       ),
+                              //       alignment: Alignment.center,
+                              //       // child: Text(
+                              //       //   activity.startTimes[1],
+                              //       // ),
+                              //     ),
+                              //   ],
+                              // )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      left: 20.0,
-                      top: 15.0,
-                      bottom: 15.0,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: CachedNetworkImage(
-                          imageUrl: destiny.imageURL,
-                          width: 110.0,
-                          fit: BoxFit.cover,
+                      Positioned(
+                        left: 20.0,
+                        top: 15.0,
+                        bottom: 15.0,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: CachedNetworkImage(
+                            imageUrl: destiny.imageURL,
+                            width: 110.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),

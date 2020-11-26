@@ -1,23 +1,21 @@
 import 'package:first_app/Screens/Login/login_screen.dart';
 import 'package:first_app/Screens/Signup/signup_background.dart';
 import 'package:first_app/Screens/Welcome/components/palette.dart';
+// import 'package:first_app/views/home.dart';
 import 'package:first_app/widgets/already-have-an-account-check.dart';
-import 'package:first_app/widgets/password-input.dart';
-import 'package:first_app/widgets/round-button.dart';
-import 'package:first_app/widgets/text-input.dart';
+import 'package:first_app/widgets/rounded_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app/auth.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Body(),
-    );
-  }
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class Body extends StatelessWidget {
+class _SignupScreenState extends State<SignupScreen> {
+  String _email, _password = "";
+  final AuthService auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -48,19 +46,27 @@ class Body extends StatelessWidget {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          TextInput(
-                            icon: Icons.person,
-                            hint: 'Email',
-                            inputType: TextInputType.emailAddress,
-                            onChanged: (value) {},
-                            inputAction: TextInputAction.next,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: TextFormField(
+                              decoration: kInputDecoration,
+                              onChanged: (value) {
+                                _email = value.trim();
+                              },
+                            ),
                           ),
-                          PasswordInput(
-                            icon: Icons.lock,
-                            hint: 'Password',
-                            onChanged: (value) {},
-                            inputAction: TextInputAction.done,
+                          TextFormField(
+                            // icon: Icons.lock,
+                            // hint: 'Password',
+                            obscureText: true,
+                            decoration: kInputPassDecoration,
+                            onChanged: (value) {
+                              setState(() {
+                                _password = value.trim();
+                              });
+                            },
+                            // inputAction: TextInputAction.done,
                           ),
                         ],
                       ),
@@ -70,7 +76,16 @@ class Body extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          RoundButton(buttonText: 'Sign Up'),
+                          RoundedButton(
+                              text: 'Sign Up',
+                              press: () async {
+                                print('$_email, $_password');
+                                dynamic user =
+                                    await auth.register(_email, _password);
+                                if (user == null) {
+                                  print('Error signing up');
+                                }
+                              }),
                           SizedBox(
                             height: 10,
                           ),
@@ -116,7 +131,6 @@ class SocalIcon extends StatelessWidget {
     this.iconSrc,
     this.press,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

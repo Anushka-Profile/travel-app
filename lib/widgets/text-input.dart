@@ -26,7 +26,7 @@ class TextInput extends StatelessWidget {
           color: Colors.grey[600].withOpacity(0.5),
           borderRadius: BorderRadius.circular(200.0),
         ),
-        child: TextField(
+        child: TextFormField(
           onChanged: onChanged,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
@@ -35,7 +35,7 @@ class TextInput extends StatelessWidget {
             prefixIcon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Icon(
-                icon,
+                Icons.person,
                 color: Colors.white,
                 size: 30,
               ),

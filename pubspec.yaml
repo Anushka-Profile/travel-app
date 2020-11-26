@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   cached_network_image: ^2.0.0
   flutter_svg: ^0.18.0
+  email_validator: ^1.0.6
+  provider:
+  circular_profile_avatar: ^1.0.6
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -34,9 +37,11 @@ dependencies:
   font_awesome_flutter: ^8.10.0
   google_fonts: ^1.1.1
 
-  firebase_core: ^0.5.0
-  firebase_auth: ^0.18.0+1
+  firebase_core: ^0.5.1
+  firebase_auth: 
   google_sign_in: ^4.5.3
+  cloud_firestore: ^0.14.3+1
+  firebase_storage: ^5.0.1
 
 dev_dependencies:
   flutter_test:

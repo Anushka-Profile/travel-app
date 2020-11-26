@@ -24,7 +24,7 @@ class PasswordInput extends StatelessWidget {
           color: Colors.grey[600].withOpacity(0.5),
           borderRadius: BorderRadius.circular(200.0),
         ),
-        child: TextField(
+        child: TextFormField(
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
             border: InputBorder.none,

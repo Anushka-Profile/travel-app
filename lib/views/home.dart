@@ -2,10 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/data/data.dart';
 import 'package:first_app/model/country_model.dart';
-import 'package:first_app/views/flights.dart';
 import 'package:first_app/model/popular_tours_model.dart';
+import 'package:first_app/views/flights.dart';
 import 'package:first_app/views/hotels.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'profile.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -162,6 +163,12 @@ class _HomeState extends State<Home> {
         onTap: (int value) {
           setState(() {
             _currentTab = value;
+            if (_currentTab == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()),
+              );
+            }
           });
         },
         items: [
@@ -174,7 +181,7 @@ class _HomeState extends State<Home> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.check_circle,
+              Icons.account_circle,
               size: 30.0,
             ),
             title: SizedBox.shrink(),
@@ -320,7 +327,7 @@ class CountryListTile extends StatelessWidget {
                         children: [
                           Container(
                             child: Text(
-                              "Paris",
+                              countryName,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
@@ -330,13 +337,15 @@ class CountryListTile extends StatelessWidget {
                           SizedBox(
                             height: 3,
                           ),
-                          Text(
-                            "18 Tours",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 13),
-                          )
+                          Container(
+                            child: Text(
+                              '$noOfTours Tours',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -351,7 +360,7 @@ class CountryListTile extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              "4.5",
+                              "$rating",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
